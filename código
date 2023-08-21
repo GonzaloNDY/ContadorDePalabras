@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int contarPalabras(char cadena[]){
+    int cantidad;
+
+    if (isalpha(cadena[0])){
+        ++cantidad;
+    }
+
+    for (int i = 1; cadena[i] != '\0'; i++){
+        if (!isalpha(cadena[i - 1]) && isalpha(cadena[i]))
+            ++cantidad;
+    }
+
+    return cantidad;
+}
